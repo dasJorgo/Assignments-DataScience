@@ -1,9 +1,10 @@
 import pandas as pd
+from typing import Tuple, Dict
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, f1_score
 
-def prepare_target(df):
+def prepare_target(df: pd.DataFrame) -> pd.DataFrame:
     """
     Convert the 'Transported' column from Boolean (True/False) to Integer (1/0).
     Should return the modified DataFrame.
@@ -11,7 +12,7 @@ def prepare_target(df):
     # TODO: Implement this function
     pass
 
-def split_data(df, features, target, test_size=0.2, random_state=42):
+def split_data(df: pd.DataFrame, features: list, target: str, test_size=0.2, random_state=42) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """
     Split the data into training and testing sets.
     - features: List of column names to use as features.
@@ -23,7 +24,7 @@ def split_data(df, features, target, test_size=0.2, random_state=42):
     # TODO: Implement this function
     pass
 
-def train_model(X_train, y_train):
+def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> DecisionTreeClassifier:
     """
     Initialize and train a DecisionTreeClassifier on the training data.
     Return the trained model.
@@ -31,7 +32,7 @@ def train_model(X_train, y_train):
     # TODO: Implement this function
     pass
 
-def evaluate_model(model, X_test, y_test):
+def evaluate_model(model: DecisionTreeClassifier, X_test: pd.DataFrame, y_test: pd.Series) -> Dict[float, float]:
     """
     Predict the labels for the test set and calculate metrics.
     Returns a dictionary with 'accuracy' and 'f1_score'.

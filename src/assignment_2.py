@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def calculate_total_spending(df):
+def calculate_total_spending(df: pd.DataFrame) -> pd.DataFrame:
     """
     Create a new column 'TotalSpending' by summing up:
     'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', and 'VRDeck'.
@@ -11,7 +11,7 @@ def calculate_total_spending(df):
     # TODO: Implement this function
     pass
 
-def parse_cabin(df):
+def parse_cabin(df: pd.DataFrame) -> pd.DataFrame:
     """
     The 'Cabin' column is in the format 'Deck/Num/Side' (e.g., 'B/0/P').
     Split this into three new columns: 'Deck', 'CabinNum', and 'Side'.
@@ -22,14 +22,14 @@ def parse_cabin(df):
     # TODO: Implement this function
     pass
 
-def filter_outliers_iqr(df, column_name):
+def filter_outliers_iqr(df: pd.DataFrame, column_name: str) -> pd.Series:
     """
     Identify and remove outliers in the specified column using the IQR method.
     - Calculate Q1 (25th percentile) and Q3 (75th percentile).
     - Calculate IQR = Q3 - Q1.
     - Define bounds: Lower = Q1 - 1.5 * IQR, Upper = Q3 + 1.5 * IQR.
     - Keep only rows where the column value is within [Lower, Upper].
-    Should return the filtered DataFrame.
+    Should return a Series containing the filtered column values.
     """
     # TODO: Implement this function
     pass
